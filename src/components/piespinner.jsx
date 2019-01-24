@@ -20,10 +20,10 @@ export const PieSpinner = pure(props => (
       <Spinner
         {...pick(props, "backgroundColor", "border", "duration", "isInfinite")}
       />
-      <Filler
+      <RightFill
         {...pick(props, "backgroundColor", "border", "duration", "isInfinite")}
       />
-      <Mask
+      <BackgroundWithLeftMask
         {...pick(
           props,
           "backgroundColor",
@@ -67,8 +67,8 @@ const AnimationInfiniteMixin = css`
 const CircleBackground = styled.div`
   background: ${props => props.backgroundColor};
   border-radius: 50%;
-  width: calc(${props => props.width} + ${OutlineCorrection});
-  height: calc(${props => props.height} + ${OutlineCorrection});
+  width: calc(${props => props.width} - ${OutlineCorrection} - 1px);
+  height: calc(${props => props.height} - ${OutlineCorrection} - 1px);
   ${FullGridMixin};
 `;
 
@@ -108,7 +108,7 @@ const Spinner = styled(Pie)`
   ${AnimationInfiniteMixin};
 `;
 
-const Filler = styled(Pie)`
+const RightFill = styled(Pie)`
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   justify-self: end;
   opacity: 0;
@@ -119,9 +119,9 @@ const Filler = styled(Pie)`
   ${AnimationInfiniteMixin};
 `;
 
-const Mask = styled.div`
-  width: calc(${props => props.width} + ${OutlineCorrection});
-  height: calc(${props => props.height} + ${OutlineCorrection});
+const BackgroundWithLeftMask = styled.div`
+  width: calc(${props => props.width} - ${OutlineCorrection});
+  height: calc(${props => props.height} - ${OutlineCorrection});
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
   background: ${props => props.backgroundColor};
   align-self: center;
@@ -130,7 +130,6 @@ const Mask = styled.div`
   opacity: 1;
   z-index: 4;
   animation: ${OpacityAnimation} ${props => props.duration}ms steps(1, end);
-  transform: scale(1.1);
   ${FullGridMixin};
   ${AnimationInfiniteMixin};
 `;
