@@ -40,6 +40,7 @@ storiesOf('PieSpinner', module)
     });
 
 const Layout = styled.div`
+    font-family: 'Segoe UI', sans-serif;
     position: absolute;
     top: 0;
     left: 0;
