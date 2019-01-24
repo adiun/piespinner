@@ -1,1 +1,1 @@
-{"version":3,"file":"main.css","sources":["webpack:///./src/D:/Isaac/storybook/pie/src/App.css"],"sourcesContent":["* {\n  box-sizing: border-box;\n}"],"mappings":"AAAA;AACA;AACA;","sourceRoot":""}
+{"version":3,"file":"main.css","sources":["webpack:///./src/c:/src/const/piespinner/src/App.css"],"sourcesContent":["* {\r\n  box-sizing: border-box;\r\n}"],"mappings":"AAAA;AACA;AACA;","sourceRoot":""}
