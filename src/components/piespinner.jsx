@@ -67,8 +67,8 @@ const AnimationInfiniteMixin = css`
 const CircleBackground = styled.div`
   background: ${props => props.backgroundColor};
   border-radius: 50%;
-  width: calc(${props => props.width} - ${OutlineCorrection});
-  height: calc(${props => props.height} - ${OutlineCorrection});
+  width: calc(${props => props.width} + ${OutlineCorrection});
+  height: calc(${props => props.height} + ${OutlineCorrection});
   ${FullGridMixin};
 `;
 
@@ -120,8 +120,8 @@ const Filler = styled(Pie)`
 `;
 
 const Mask = styled.div`
-  width: calc(${props => props.width} - ${OutlineCorrection});
-  height: calc(${props => props.height} - ${OutlineCorrection});
+  width: calc(${props => props.width} + ${OutlineCorrection});
+  height: calc(${props => props.height} + ${OutlineCorrection});
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
   background: ${props => props.backgroundColor};
   align-self: center;
@@ -130,6 +130,7 @@ const Mask = styled.div`
   opacity: 1;
   z-index: 4;
   animation: ${OpacityAnimation} ${props => props.duration}ms steps(1, end);
+  transform: scale(1.1);
   ${FullGridMixin};
   ${AnimationInfiniteMixin};
 `;
