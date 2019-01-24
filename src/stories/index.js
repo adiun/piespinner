@@ -17,12 +17,12 @@ storiesOf('PieSpinner', module)
         const duration = number('Duration', 5000);
         const bgColor = color('Background Color', '#08c');
         const borderColor = color('Border Color', '#ccc');
-        const borderWidth = text('Border Width', '20px');
+        const borderWidth = text('Border Width', '30px');
         const fgColor = color('Foreground Color', 'white');
-        const fontSize = text('Font Size', '1em');
-        const height = text('Height', '500px');
+        const fontSize = text('Font Size', '2em');
+        const height = text('Height', '300px');
         const isInfinite = boolean('Is Infinite', true);
-        const width = text('Width', '500px');
+        const width = text('Width', '300px');
         return (
             <Layout>
                 <PieSpinner
